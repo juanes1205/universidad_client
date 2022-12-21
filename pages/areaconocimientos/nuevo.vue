@@ -14,13 +14,7 @@
                     <div slot="body" class="row">
                       <div class="form-group col-12">
                         <label for="">Área Conocimiento</label>
-                        <input
-                          type="text"
-                          name=""
-                          v-model="model.area_conocimiento"
-                          class="form-control"
-                          id=""
-                        />
+                        <input type="text" name="" v-model="model.area_conocimiento" class="form-control" id="" />
                       </div>
                     </div>
                   </CrudCreate>
@@ -46,7 +40,6 @@ export default {
     return {
       model: {
         area_conocimiento: '',
-        codigo: '',
       },
       apiUrl: 'area_conocimientos',
       page: 'Configuración',

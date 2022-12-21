@@ -15,15 +15,21 @@
                 <div class="card-body">
                   <table class="table">
                     <thead>
-                      <th class="py-0 px-1">ID</th>
-                      <th class="py-0 px-1">ÁREA CONOCIMIENTO</th>
+                      <th class="py-0 px-1">MATERIA</th>
+                      <th class="py-0 px-1">CRÉDITOS</th>
+                      <th class="py-0 px-1">AREA</th>
+                      <th class="py-0 px-1">TIPO MATERIA</th>
+                      <th class="py-0 px-1">PROFESOR</th>
                       <th class="py-0 px-1">ACCIONES</th>
                       <th class="py-0 px-1">ESTADO</th>
                     </thead>
                     <tbody>
-                      <tr v-for="(m, i) in list">
-                        <td class="py-0 px-1">{{ m.id }}</td>
-                        <td class="py-0 px-1">{{ m.area_conocimiento }}</td>
+                      <tr v-for=" m in list">
+                        <td class="py-0 px-1">{{ m.materia }}</td>
+                        <td class="py-0 px-1">{{ m.id_credito }}</td>
+                        <td class="py-0 px-1">{{ m.id_area }}</td>
+                        <td class="py-0 px-1">{{ m.id_tipo_materia }}</td>
+                        <td class="py-0 px-1">{{ m.id_user }}</td>
                         <td class="py-0 px-1">
                           <div class="btn-group">
                             <nuxtLink :to="url_editar + m.id" class="btn btn-flat btn-secondary btn-sm">Editar
@@ -59,28 +65,27 @@
 
 <script>
 export default {
-  name: 'IndexPage',
   head() {
     return {
       title: this.modulo,
-    }
+    };
   },
 
   data() {
     return {
       load: true,
       list: [],
-      apiUrl: 'area_conocimientos',
+      apiUrl: 'materias',
       page: 'Configuración',
-      modulo: 'Área Conocimiento',
-      url_nuevo: '/areaconocimientos/nuevo',
-      url_editar: '/areaconocimientos/',
-    }
+      modulo: 'Materias',
+      url_nuevo: '/materias/nuevo',
+      url_editar: '/materias/',
+    };
   },
   methods: {
     async GET_DATA(path) {
-      const res = await this.$api.$get(path)
-      return res
+      const res = await this.$api.$get(path);
+      return res;
     },
     async DesactivarItem(id) {
       this.load = true
@@ -89,7 +94,7 @@ export default {
         console.log(res)
         await Promise.all([this.GET_DATA(this.apiUrl)]).then((v) => {
           this.list = v[0]
-        })
+        });
       } catch (e) {
         console.log(e)
       } finally {
@@ -119,14 +124,14 @@ export default {
     this.$nextTick(async () => {
       try {
         await Promise.all([this.GET_DATA(this.apiUrl)]).then((v) => {
-          this.list = v[0]
-        })
+          this.list = v[0];
+        });
       } catch (e) {
-        console.log(e)
+        console.log(e);
       } finally {
-        this.load = false
+        this.load = false;
       }
-    })
+    });
   },
-}
+};
 </script>

@@ -15,23 +15,35 @@
                 <div class="card-body">
                   <table class="table">
                     <thead>
-                      <th class="py-0 px-1">ID</th>
-                      <th class="py-0 px-1">ÁREA CONOCIMIENTO</th>
+                      <th class="py-0 px-1">DOCUMENTO</th>
+                      <th class="py-0 px-1">NOMBRE</th>
+                      <th class="py-0 px-1">TELÉFONO</th>
+                      <th class="py-0 px-1">DIRECCIÓN</th>
+                      <th class="py-0 px-1">CIUDAD</th>
+                      <th class="py-0 px-1">USUARIO</th>
+                      <th class="py-0 px-1">CORREO</th>
+                      <th class="py-0 px-1">ROL</th>
                       <th class="py-0 px-1">ACCIONES</th>
                       <th class="py-0 px-1">ESTADO</th>
                     </thead>
                     <tbody>
                       <tr v-for="(m, i) in list">
-                        <td class="py-0 px-1">{{ m.id }}</td>
-                        <td class="py-0 px-1">{{ m.area_conocimiento }}</td>
+                        <td class="py-0 px-1">{{ m.id_tipo_documento }}-{{ m.documento }}</td>
+                        <td class="py-0 px-1">{{ m.nombre }}</td>
+                        <td class="py-0 px-1">{{ m.telefono }}</td>
+                        <td class="py-0 px-1">{{ m.direccion }}</td>
+                        <td class="py-0 px-1">{{ m.ciudad }}</td>
+                        <td class="py-0 px-1">{{ m.username }}</td>
+                        <td class="py-0 px-1">{{ m.email }}</td>
+                        <td class="py-0 px-1">{{ m.rol }}</td>
                         <td class="py-0 px-1">
                           <div class="btn-group">
-                            <nuxtLink :to="url_editar + m.id" class="btn btn-flat btn-secondary btn-sm">Editar
+                            <nuxtLink :to="url_editar + m.id" class="btn btn-secondary btn-sm">
                               <i class="fas fa-pen"></i>
                             </nuxtLink>
                             <template v-if="m.estado == '1'">
-                              <button type="button" @click="Desactivar(m.id)" class="btn btn-flat btn-danger btn-sm">
-                                <i class="fas fa-trash"></i> Desactivar
+                              <button type="button" @click="Desactivar(m.id)" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
                               </button>
                             </template>
                           </div>
@@ -70,11 +82,11 @@ export default {
     return {
       load: true,
       list: [],
-      apiUrl: 'area_conocimientos',
-      page: 'Configuración',
-      modulo: 'Área Conocimiento',
-      url_nuevo: '/areaconocimientos/nuevo',
-      url_editar: '/areaconocimientos/',
+      apiUrl: 'users',
+      page: 'Usuario',
+      modulo: 'Usuarios',
+      url_nuevo: '/usuarios/nuevo',
+      url_editar: '/usuarios/',
     }
   },
   methods: {

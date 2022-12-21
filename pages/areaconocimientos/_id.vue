@@ -14,21 +14,11 @@
                   <div slot="body" class="row">
                     <div class="form-group col-12">
                       <label for="">Área Conocimiento</label>
-                      <input
-                        type="text"
-                        name=""
-                        v-model="model.area_conocimiento"
-                        class="form-control"
-                        id=""
-                      />
+                      <input type="text" name="" v-model="model.area_conocimiento" class="form-control" id="" />
                     </div>
                     <div class="form-group col-12">
                       <label for="">Estado</label>
-                      <select
-                        class="form-select"
-                        aria-label="Default select example"
-                        v-model="model.estado"
-                      >
+                      <select class="form-select" aria-label="Default select example" v-model="model.estado">
                         <option selected>Seleccione un Estado</option>
                         <option value="1">Activar</option>
                         <option value="0">Desactivar</option>

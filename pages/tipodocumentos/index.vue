@@ -26,18 +26,11 @@
                         <td class="py-0 px-1">{{ m.tipo_documento }}</td>
                         <td class="py-0 px-1">
                           <div class="btn-group">
-                            <nuxtLink
-                              :to="url_editar + m.id"
-                              class="btn btn-flat btn-secondary btn-sm"
-                              >Editar
+                            <nuxtLink :to="url_editar + m.id" class="btn btn-flat btn-secondary btn-sm">Editar
                               <i class="fas fa-pen"></i>
                             </nuxtLink>
                             <template v-if="m.estado == '1'">
-                              <button
-                                type="button"
-                                @click="Desactivar(m.id)"
-                                class="btn btn-flat btn-danger btn-sm"
-                              >
+                              <button type="button" @click="Desactivar(m.id)" class="btn btn-flat btn-danger btn-sm">
                                 <i class="fas fa-trash"></i> Desactivar
                               </button>
                             </template>

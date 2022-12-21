@@ -27,7 +27,7 @@ export default {
   props: {
     model: {
       type: Object,
-      default: () => {},
+      default: () => { },
     },
     apiUrl: {
       type: String,

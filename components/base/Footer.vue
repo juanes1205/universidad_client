@@ -6,20 +6,12 @@
           <div class="copyright text-center text-sm text-muted text-lg-start">
             © 2022
             , made with <i class="fa fa-heart"></i> by
-            <a
-              href="#"
-              class="font-weight-bold"
-              target="_blank"
-              >Juan Esteban Restrepo</a
-            >
-            for a better web.
+            <a href="#" class="font-weight-bold" target="_blank">Juan Esteban Restrepo</a>
           </div>
         </div>
         <div class="col-lg-6">
-          <ul
-            class="nav nav-footer justify-content-center justify-content-lg-end"
-          >
-           
+          <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+
           </ul>
         </div>
       </div>
@@ -31,4 +23,6 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+
+</style>

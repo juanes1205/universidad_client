@@ -1,14 +1,12 @@
 <template>
   <div>
-    <BaseAside/>
-    <main
-      class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
-    >
-      
-    <BaseNavbar :page="page" :modulo="modulo"/>
+    <BaseAside />
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+
+      <BaseNavbar :page="page" :modulo="modulo" />
       <div class="container-fluid py-4">
         <slot name="body" />
-        <BaseFooter/>
+        <BaseFooter />
       </div>
     </main>
 
@@ -17,18 +15,26 @@
 
 <script>
 export default {
-    name: 'AdminTemplate',
-    props:{
+  name: 'AdminTemplate',
+  props: {
 
-    page:{
-      type:String,
-      default:''
+    page: {
+      type: String,
+      default: ''
     },
-    modulo:{
-      type:String,
-      default:''
+    modulo: {
+      type: String,
+      default: ''
     },
-}
+  },
+  mounted() {
+    let user = localStorage.getItem('userAuth')
+    if (user == null) {
+      this.$router.push('/login')
+    }
+    this.$nextTick(() => {
+    })
+  }
 }
 </script>
 
